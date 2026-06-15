@@ -14,6 +14,10 @@ app.use(express.json())
 app.use(cors({origin: FRONTEND_URL, credentials: true}));
 app.use(clerkMiddleware())
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ ok: true });
+});
+
 // if the public directory exists, serve the static files
 // this is for the production build
 if (fs.existsSync(publicDir)) {
@@ -26,5 +30,6 @@ if (fs.existsSync(publicDir)) {
 
 app.listen(port,()=>{
     connectDB();
-    console.log("server is running on port: ",port)
+    console.log("server is running on port: ",port);
+    if(process.env.NODE_ENV==="production") job.start();
 });
