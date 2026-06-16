@@ -5,7 +5,7 @@ import { connectDB } from "../lib/db.js";
 import User from "../models/user.model.js";
 
 const seedUsers = [
-  ["seed_alex_chen", "Alex Chen", "alex.chen@example.com", "https://i.pravatar.cc/150?img=1"],
+  ["seed_pawan_shaw", "Pawan Shaw", "pawan.shaw@example.com", "https://i.pravatar.cc/150?img=1"],
   ["seed_sam_taylor", "Sam Taylor", "sam.taylor@example.com", "https://i.pravatar.cc/150?img=2"],
   ["seed_jordan_lee", "Jordan Lee", "jordan.lee@example.com", "https://i.pravatar.cc/150?img=3"],
   ["seed_maya_patel", "Maya Patel", "maya.patel@example.com", "https://i.pravatar.cc/150?img=4"],
