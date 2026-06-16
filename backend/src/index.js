@@ -34,12 +34,12 @@ app.use("/api/messages",messageRoutes);
 if (fs.existsSync(publicDir)) {
   app.use(express.static(publicDir));
 
-  app.get("/{*any}", (req, res, next) => {
+  app.get("*", (req, res, next) => {
     res.sendFile(path.join(publicDir, "index.html"), (err) => next(err));
   });
 }
 
-server.listen(port,()=>{
+server.listen(port,"0.0.0.0", ()=>{
     connectDB();
     console.log("server is running on port: ",port);
     if(process.env.NODE_ENV==="production") job.start();
